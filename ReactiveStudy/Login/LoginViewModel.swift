@@ -1,9 +1,9 @@
 import ReactiveSwift
 
 class LoginViewModel {
-    private let loginPipe = Signal<String, Never>.pipe()
-    private let passwordPipe = Signal<String, Never>.pipe()
-    private let authPipe = Signal<Void, Never>.pipe()
+    private let loginObserver: Signal<String, Never>.Observer
+    private let passwordObserver: Signal<String, Never>.Observer
+    private let authObserver: Signal<Void, Never>.Observer
     private let loadingProperty = MutableProperty<Bool>(false)
     private let buttonEnabledProperty = MutableProperty<Bool>(false)
 
@@ -14,9 +14,10 @@ class LoginViewModel {
     let isLoading: Property<Bool>
 
     init() {
-        loginSignal = loginPipe.output
-        passwordSignal = passwordPipe.output
-        authSignal = authPipe.output
+        (loginSignal, loginObserver) = Signal.pipe()
+        (passwordSignal, passwordObserver) = Signal.pipe()
+        (authSignal, authObserver) = Signal.pipe()
+
         isLoading = Property(loadingProperty)
         isButtonEnabled = Property(buttonEnabledProperty)
 
@@ -31,21 +32,21 @@ class LoginViewModel {
                passwordSignal: Signal<String, Never>,
                buttonTapped: Signal<Void, Never>) {
 
-        loginPipe.input <~ loginSignal.map {
+        loginObserver <~ loginSignal.map {
             $0.trimmingCharacters(in: .whitespaces)
         }
 
-        passwordPipe.input <~ passwordSignal.map {
+        passwordObserver <~ passwordSignal.map {
             $0.trimmingCharacters(in: .whitespaces)
         }
 
-        loadingProperty <~ buttonTapped.map(value: true).merge(with: authSignal.map(value: false))
+        let buttonEnabledTapped = buttonTapped.withLatest(from: isButtonEnabled).filter { $1 }.toVoid()
 
-        authPipe.input <~ buttonTapped.flatMap(.latest) {
+        loadingProperty <~ buttonEnabledTapped.map(value: true).merge(with: authSignal.map(value: false))
+
+        authObserver <~ buttonEnabledTapped.flatMap(.latest) {
             // network request
-            SignalProducer(value: true).delay(2, on: QueueScheduler())
+            SignalProducer(value: ()).delay(2, on: QueueScheduler())
         }
-        .filter { $0 }
-        .map(value: ())
     }
 }

@@ -19,6 +19,8 @@
 		340C02D625802C4000A76B30 /* UIView+fromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02D525802C4000A76B30 /* UIView+fromNib.swift */; };
 		340C02DC25802F1000A76B30 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02DB25802F1000A76B30 /* UIView+Layout.swift */; };
 		340C02E025802FA600A76B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02DF25802FA600A76B30 /* LoginViewModel.swift */; };
+		344F18592581372C007F915C /* Reactive+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F18582581372C007F915C /* Reactive+Utils.swift */; };
+		344F185D25816EC1007F915C /* Reactive+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F185C25816EC1007F915C /* Reactive+UI.swift */; };
 		AD9B8AA633108797333C99C6 /* libPods-ReactiveStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F8573A6B3CC88070F3EC15 /* libPods-ReactiveStudy.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		340C02D525802C4000A76B30 /* UIView+fromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fromNib.swift"; sourceTree = "<group>"; };
 		340C02DB25802F1000A76B30 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		340C02DF25802FA600A76B30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		344F18582581372C007F915C /* Reactive+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Utils.swift"; sourceTree = "<group>"; };
+		344F185C25816EC1007F915C /* Reactive+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UI.swift"; sourceTree = "<group>"; };
 		47F8573A6B3CC88070F3EC15 /* libPods-ReactiveStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		565348EC0AC0797194FFD26F /* Pods-ReactiveStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveStudy.release.xcconfig"; path = "Target Support Files/Pods-ReactiveStudy/Pods-ReactiveStudy.release.xcconfig"; sourceTree = "<group>"; };
 		DC8BD72A83321531B8E4C5E5 /* Pods-ReactiveStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveStudy.debug.xcconfig"; path = "Target Support Files/Pods-ReactiveStudy/Pods-ReactiveStudy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			children = (
 				340C02D525802C4000A76B30 /* UIView+fromNib.swift */,
 				340C02DB25802F1000A76B30 /* UIView+Layout.swift */,
+				344F18582581372C007F915C /* Reactive+Utils.swift */,
+				344F185C25816EC1007F915C /* Reactive+UI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,9 +290,11 @@
 				340C02D625802C4000A76B30 /* UIView+fromNib.swift in Sources */,
 				340C02912580190600A76B30 /* LoginViewController.swift in Sources */,
 				340C02DC25802F1000A76B30 /* UIView+Layout.swift in Sources */,
+				344F185D25816EC1007F915C /* Reactive+UI.swift in Sources */,
 				340C028D2580190600A76B30 /* AppDelegate.swift in Sources */,
 				340C02C92580266500A76B30 /* LoginView.swift in Sources */,
 				340C028F2580190600A76B30 /* SceneDelegate.swift in Sources */,
+				344F18592581372C007F915C /* Reactive+Utils.swift in Sources */,
 				340C02E025802FA600A76B30 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

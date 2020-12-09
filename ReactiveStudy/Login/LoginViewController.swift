@@ -18,10 +18,7 @@ class LoginViewController: UIViewController {
         loginView.edges(to: loginViewContainer)
 
         loadingIndicator.reactive.isAnimating <~ viewModel.isLoading.signal
-
-        viewModel.isLoading.signal.observe(on: UIScheduler()).observeValues { [weak self] _ in
-            self?.view.endEditing(true)
-        }
+        view.reactive.endEditing <~ viewModel.isLoading.signal.toVoid()
 
         viewModel.authSignal.observe(on: UIScheduler()).observeValues { [weak self] in
             let alert = UIAlertController(title: "Success", message: "You are logged in!", preferredStyle: .alert)
@@ -31,4 +28,3 @@ class LoginViewController: UIViewController {
     }
 
 }
-
