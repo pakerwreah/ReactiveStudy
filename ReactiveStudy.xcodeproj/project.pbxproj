@@ -9,23 +9,21 @@
 /* Begin PBXBuildFile section */
 		340C028D2580190600A76B30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C028C2580190600A76B30 /* AppDelegate.swift */; };
 		340C028F2580190600A76B30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C028E2580190600A76B30 /* SceneDelegate.swift */; };
-		340C02912580190600A76B30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02902580190600A76B30 /* ViewController.swift */; };
-		340C02942580190600A76B30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340C02922580190600A76B30 /* Main.storyboard */; };
+		340C02912580190600A76B30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02902580190600A76B30 /* LoginViewController.swift */; };
+		340C02942580190600A76B30 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340C02922580190600A76B30 /* LoginViewController.storyboard */; };
 		340C02962580190700A76B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340C02952580190700A76B30 /* Assets.xcassets */; };
 		340C02992580190700A76B30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340C02972580190700A76B30 /* LaunchScreen.storyboard */; };
 		340C02A42580190700A76B30 /* ReactiveStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02A32580190700A76B30 /* ReactiveStudyTests.swift */; };
-		340C02AF2580190700A76B30 /* ReactiveStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02AE2580190700A76B30 /* ReactiveStudyUITests.swift */; };
+		340C02C92580266500A76B30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02C82580266500A76B30 /* LoginView.swift */; };
+		340C02D12580271000A76B30 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340C02D02580271000A76B30 /* LoginView.xib */; };
+		340C02D625802C4000A76B30 /* UIView+fromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02D525802C4000A76B30 /* UIView+fromNib.swift */; };
+		340C02DC25802F1000A76B30 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02DB25802F1000A76B30 /* UIView+Layout.swift */; };
+		340C02E025802FA600A76B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C02DF25802FA600A76B30 /* LoginViewModel.swift */; };
+		AD9B8AA633108797333C99C6 /* libPods-ReactiveStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F8573A6B3CC88070F3EC15 /* libPods-ReactiveStudy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		340C02A02580190700A76B30 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 340C02812580190600A76B30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 340C02882580190600A76B30;
-			remoteInfo = ReactiveStudy;
-		};
-		340C02AB2580190700A76B30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 340C02812580190600A76B30 /* Project object */;
 			proxyType = 1;
@@ -38,17 +36,22 @@
 		340C02892580190600A76B30 /* ReactiveStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		340C028C2580190600A76B30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		340C028E2580190600A76B30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		340C02902580190600A76B30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		340C02932580190600A76B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		340C02902580190600A76B30 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		340C02932580190600A76B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginViewController.storyboard; sourceTree = "<group>"; };
 		340C02952580190700A76B30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		340C02982580190700A76B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		340C029A2580190700A76B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		340C029F2580190700A76B30 /* ReactiveStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		340C02A32580190700A76B30 /* ReactiveStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveStudyTests.swift; sourceTree = "<group>"; };
 		340C02A52580190700A76B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		340C02AA2580190700A76B30 /* ReactiveStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		340C02AE2580190700A76B30 /* ReactiveStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveStudyUITests.swift; sourceTree = "<group>"; };
-		340C02B02580190700A76B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		340C02C82580266500A76B30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		340C02D02580271000A76B30 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		340C02D525802C4000A76B30 /* UIView+fromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fromNib.swift"; sourceTree = "<group>"; };
+		340C02DB25802F1000A76B30 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		340C02DF25802FA600A76B30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		47F8573A6B3CC88070F3EC15 /* libPods-ReactiveStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		565348EC0AC0797194FFD26F /* Pods-ReactiveStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveStudy.release.xcconfig"; path = "Target Support Files/Pods-ReactiveStudy/Pods-ReactiveStudy.release.xcconfig"; sourceTree = "<group>"; };
+		DC8BD72A83321531B8E4C5E5 /* Pods-ReactiveStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveStudy.debug.xcconfig"; path = "Target Support Files/Pods-ReactiveStudy/Pods-ReactiveStudy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,17 +59,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9B8AA633108797333C99C6 /* libPods-ReactiveStudy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		340C029C2580190700A76B30 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		340C02A72580190700A76B30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,8 +78,9 @@
 			children = (
 				340C028B2580190600A76B30 /* ReactiveStudy */,
 				340C02A22580190700A76B30 /* ReactiveStudyTests */,
-				340C02AD2580190700A76B30 /* ReactiveStudyUITests */,
 				340C028A2580190600A76B30 /* Products */,
+				72A56BF7EA5C640B35624719 /* Pods */,
+				CBD0B019D3CD6580A78BA5E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,7 +89,6 @@
 			children = (
 				340C02892580190600A76B30 /* ReactiveStudy.app */,
 				340C029F2580190700A76B30 /* ReactiveStudyTests.xctest */,
-				340C02AA2580190700A76B30 /* ReactiveStudyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,10 +96,10 @@
 		340C028B2580190600A76B30 /* ReactiveStudy */ = {
 			isa = PBXGroup;
 			children = (
+				340C02D425802C1B00A76B30 /* Extensions */,
+				340C02C72580263000A76B30 /* Login */,
 				340C028C2580190600A76B30 /* AppDelegate.swift */,
 				340C028E2580190600A76B30 /* SceneDelegate.swift */,
-				340C02902580190600A76B30 /* ViewController.swift */,
-				340C02922580190600A76B30 /* Main.storyboard */,
 				340C02952580190700A76B30 /* Assets.xcassets */,
 				340C02972580190700A76B30 /* LaunchScreen.storyboard */,
 				340C029A2580190700A76B30 /* Info.plist */,
@@ -119,13 +116,42 @@
 			path = ReactiveStudyTests;
 			sourceTree = "<group>";
 		};
-		340C02AD2580190700A76B30 /* ReactiveStudyUITests */ = {
+		340C02C72580263000A76B30 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				340C02AE2580190700A76B30 /* ReactiveStudyUITests.swift */,
-				340C02B02580190700A76B30 /* Info.plist */,
+				340C02C82580266500A76B30 /* LoginView.swift */,
+				340C02D02580271000A76B30 /* LoginView.xib */,
+				340C02DF25802FA600A76B30 /* LoginViewModel.swift */,
+				340C02902580190600A76B30 /* LoginViewController.swift */,
+				340C02922580190600A76B30 /* LoginViewController.storyboard */,
 			);
-			path = ReactiveStudyUITests;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		340C02D425802C1B00A76B30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				340C02D525802C4000A76B30 /* UIView+fromNib.swift */,
+				340C02DB25802F1000A76B30 /* UIView+Layout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72A56BF7EA5C640B35624719 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC8BD72A83321531B8E4C5E5 /* Pods-ReactiveStudy.debug.xcconfig */,
+				565348EC0AC0797194FFD26F /* Pods-ReactiveStudy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CBD0B019D3CD6580A78BA5E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47F8573A6B3CC88070F3EC15 /* libPods-ReactiveStudy.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +161,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 340C02B32580190700A76B30 /* Build configuration list for PBXNativeTarget "ReactiveStudy" */;
 			buildPhases = (
+				A699392FBA8F2EF188250F69 /* [CP] Check Pods Manifest.lock */,
 				340C02852580190600A76B30 /* Sources */,
 				340C02862580190600A76B30 /* Frameworks */,
 				340C02872580190600A76B30 /* Resources */,
@@ -166,24 +193,6 @@
 			productReference = 340C029F2580190700A76B30 /* ReactiveStudyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		340C02A92580190700A76B30 /* ReactiveStudyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 340C02B92580190700A76B30 /* Build configuration list for PBXNativeTarget "ReactiveStudyUITests" */;
-			buildPhases = (
-				340C02A62580190700A76B30 /* Sources */,
-				340C02A72580190700A76B30 /* Frameworks */,
-				340C02A82580190700A76B30 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				340C02AC2580190700A76B30 /* PBXTargetDependency */,
-			);
-			name = ReactiveStudyUITests;
-			productName = ReactiveStudyUITests;
-			productReference = 340C02AA2580190700A76B30 /* ReactiveStudyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +206,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					340C029E2580190700A76B30 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 340C02882580190600A76B30;
-					};
-					340C02A92580190700A76B30 = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 340C02882580190600A76B30;
 					};
@@ -221,7 +226,6 @@
 			targets = (
 				340C02882580190600A76B30 /* ReactiveStudy */,
 				340C029E2580190700A76B30 /* ReactiveStudyTests */,
-				340C02A92580190700A76B30 /* ReactiveStudyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,7 +237,8 @@
 			files = (
 				340C02992580190700A76B30 /* LaunchScreen.storyboard in Resources */,
 				340C02962580190700A76B30 /* Assets.xcassets in Resources */,
-				340C02942580190600A76B30 /* Main.storyboard in Resources */,
+				340C02D12580271000A76B30 /* LoginView.xib in Resources */,
+				340C02942580190600A76B30 /* LoginViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,23 +249,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340C02A82580190700A76B30 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A699392FBA8F2EF188250F69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactiveStudy-checkManifestLockResult.txt",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		340C02852580190600A76B30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340C02912580190600A76B30 /* ViewController.swift in Sources */,
+				340C02D625802C4000A76B30 /* UIView+fromNib.swift in Sources */,
+				340C02912580190600A76B30 /* LoginViewController.swift in Sources */,
+				340C02DC25802F1000A76B30 /* UIView+Layout.swift in Sources */,
 				340C028D2580190600A76B30 /* AppDelegate.swift in Sources */,
+				340C02C92580266500A76B30 /* LoginView.swift in Sources */,
 				340C028F2580190600A76B30 /* SceneDelegate.swift in Sources */,
+				340C02E025802FA600A76B30 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,14 +299,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340C02A62580190700A76B30 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				340C02AF2580190700A76B30 /* ReactiveStudyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,20 +307,15 @@
 			target = 340C02882580190600A76B30 /* ReactiveStudy */;
 			targetProxy = 340C02A02580190700A76B30 /* PBXContainerItemProxy */;
 		};
-		340C02AC2580190700A76B30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 340C02882580190600A76B30 /* ReactiveStudy */;
-			targetProxy = 340C02AB2580190700A76B30 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		340C02922580190600A76B30 /* Main.storyboard */ = {
+		340C02922580190600A76B30 /* LoginViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				340C02932580190600A76B30 /* Base */,
 			);
-			name = Main.storyboard;
+			name = LoginViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		340C02972580190700A76B30 /* LaunchScreen.storyboard */ = {
@@ -433,6 +447,7 @@
 		};
 		340C02B42580190700A76B30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC8BD72A83321531B8E4C5E5 /* Pods-ReactiveStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +466,7 @@
 		};
 		340C02B52580190700A76B30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 565348EC0AC0797194FFD26F /* Pods-ReactiveStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -509,44 +525,6 @@
 			};
 			name = Release;
 		};
-		340C02BA2580190700A76B30 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ReactiveStudyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.paker.reactive.ReactiveStudyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactiveStudy;
-			};
-			name = Debug;
-		};
-		340C02BB2580190700A76B30 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ReactiveStudyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.paker.reactive.ReactiveStudyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactiveStudy;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,15 +551,6 @@
 			buildConfigurations = (
 				340C02B72580190700A76B30 /* Debug */,
 				340C02B82580190700A76B30 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		340C02B92580190700A76B30 /* Build configuration list for PBXNativeTarget "ReactiveStudyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				340C02BA2580190700A76B30 /* Debug */,
-				340C02BB2580190700A76B30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
