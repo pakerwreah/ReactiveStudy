@@ -12,12 +12,15 @@ class LoginView: UIView {
         passwordTextField.reactive.becomeFirstResponder <~ loginTextField.reactive.next
     }
 
-    func setUp(with viewModel: LoginViewModel) {
+    func bind(to viewModel: LoginViewModel) {
         viewModel.setUp(
-            loginSignal: loginTextField.reactive.continuousTextValues,
-            passwordSignal: passwordTextField.reactive.continuousTextValues,
-            buttonTapped: passwordTextField.reactive.next.merge(with: signInButton.reactive.tapped)
+            loginChanged: loginTextField.reactive.continuousTextValues,
+            passwordChanged: passwordTextField.reactive.continuousTextValues,
+            authTrigger: passwordTextField.reactive.next.merge(with: signInButton.reactive.tapped)
         )
+
+        loginTextField.reactive.text <~ viewModel.loginProperty.signal
+        passwordTextField.reactive.text <~ viewModel.passwordProperty.signal
 
         signInButton.reactive.isEnabled <~ viewModel.isButtonEnabled
         signInButton.reactive.alpha <~ viewModel.isButtonEnabled.map { $0 ? 1 : 0.3 }

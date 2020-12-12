@@ -6,13 +6,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginViewContainer: UIView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
-    private let viewModel = LoginViewModel()
+    private let viewModel = LoginViewModel(loginService: LoginServiceProvider())
     private let loginView = LoginView.fromNib()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loginView.setUp(with: viewModel)
+        loginView.bind(to: viewModel)
 
         loginViewContainer.addSubview(loginView)
         loginView.edges(to: loginViewContainer)

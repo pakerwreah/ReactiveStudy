@@ -1,52 +1,52 @@
 import ReactiveSwift
 
 class LoginViewModel {
-    private let loginObserver: Signal<String, Never>.Observer
-    private let passwordObserver: Signal<String, Never>.Observer
-    private let authObserver: Signal<Void, Never>.Observer
     private let loadingProperty = MutableProperty<Bool>(false)
     private let buttonEnabledProperty = MutableProperty<Bool>(false)
+    private let authObserver: Signal<Void, Never>.Observer
+    private let loginService: LoginServiceProtocol
 
-    let loginSignal: Signal<String, Never>
-    let passwordSignal: Signal<String, Never>
+    let loginProperty = MutableProperty<String>("")
+    let passwordProperty = MutableProperty<String>("")
+
     let authSignal: Signal<Void, Never>
     var isButtonEnabled: Property<Bool>
     let isLoading: Property<Bool>
 
-    init() {
-        (loginSignal, loginObserver) = Signal.pipe()
-        (passwordSignal, passwordObserver) = Signal.pipe()
-        (authSignal, authObserver) = Signal.pipe()
+    init(loginService: LoginServiceProtocol) {
 
+        self.loginService = loginService
+
+        (authSignal, authObserver) = Signal.pipe()
+        
         isLoading = Property(loadingProperty)
         isButtonEnabled = Property(buttonEnabledProperty)
 
-        buttonEnabledProperty <~ SignalProducer.combineLatest(
-            loginSignal.producer, passwordSignal.producer, isLoading.producer
-        ).map { login, password, isLoading in
+        buttonEnabledProperty <~ Property.combineLatest(
+            loginProperty, passwordProperty, isLoading
+        )
+        .map { login, password, isLoading in
             !login.isEmpty && !password.isEmpty && !isLoading
         }
     }
 
-    func setUp(loginSignal: Signal<String, Never>,
-               passwordSignal: Signal<String, Never>,
-               buttonTapped: Signal<Void, Never>) {
+    func setUp(loginChanged: Signal<String, Never>,
+               passwordChanged: Signal<String, Never>,
+               authTrigger: Signal<Void, Never>) {
 
-        loginObserver <~ loginSignal.map {
-            $0.trimmingCharacters(in: .whitespaces)
+        loginProperty <~ loginChanged.map(normalized)
+        passwordProperty <~ passwordChanged.map(normalized)
+
+        let startRequest = authTrigger.withLatest(from: isButtonEnabled).filter { $1 }.toVoid()
+
+        loadingProperty <~ startRequest.map(value: true).merge(with: authSignal.map(value: false))
+
+        authObserver <~ startRequest.flatMap(.latest) { [loginService, loginProperty, passwordProperty] in
+            loginService.authenticate(login: loginProperty.value, password: passwordProperty.value)
         }
+    }
 
-        passwordObserver <~ passwordSignal.map {
-            $0.trimmingCharacters(in: .whitespaces)
-        }
-
-        let buttonEnabledTapped = buttonTapped.withLatest(from: isButtonEnabled).filter { $1 }.toVoid()
-
-        loadingProperty <~ buttonEnabledTapped.map(value: true).merge(with: authSignal.map(value: false))
-
-        authObserver <~ buttonEnabledTapped.flatMap(.latest) {
-            // network request
-            SignalProducer(value: ()).delay(2, on: QueueScheduler())
-        }
+    private func normalized(_ value: String) -> String {
+        value.replacingOccurrences(of: " ", with: "")
     }
 }
