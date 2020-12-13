@@ -41,9 +41,10 @@ class LoginViewModel {
 
         loadingProperty <~ startRequest.map(value: true).merge(with: authSignal.map(value: false))
 
-        authObserver <~ startRequest.flatMap(.latest) { [loginService, loginProperty, passwordProperty] in
-            loginService.authenticate(login: loginProperty.value, password: passwordProperty.value)
-        }
+        authObserver <~ startRequest
+            .withLatest(from: loginProperty.combineLatest(with: passwordProperty))
+            .map { $1 }
+            .flatMap(.latest, loginService.authenticate)
     }
 
     private func normalized(_ value: String) -> String {
