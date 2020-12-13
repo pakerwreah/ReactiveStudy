@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self?.present(alert, animated: true)
         }
+
+        let tap = UITapGestureRecognizer()
+        view.reactive.endEditing <~ tap.reactive.stateChanged.toVoid()
+        view.addGestureRecognizer(tap)
     }
 
 }
