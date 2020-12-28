@@ -19,8 +19,8 @@ class LoginView: UIView {
             authTrigger: passwordTextField.reactive.next.merge(with: signInButton.reactive.tapped)
         )
 
-        loginTextField.reactive.text <~ viewModel.loginProperty.signal
-        passwordTextField.reactive.text <~ viewModel.passwordProperty.signal
+        loginTextField.reactive.text <~ viewModel.login
+        passwordTextField.reactive.text <~ viewModel.password
 
         signInButton.reactive.isEnabled <~ viewModel.isButtonEnabled
         signInButton.reactive.alpha <~ viewModel.isButtonEnabled.map { $0 ? 1 : 0.3 }

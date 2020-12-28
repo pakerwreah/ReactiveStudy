@@ -1,29 +1,33 @@
 import ReactiveSwift
 
 class LoginViewModel {
+    private let loginProperty = MutableProperty<String>("")
+    private let passwordProperty = MutableProperty<String>("")
     private let loadingProperty = MutableProperty<Bool>(false)
     private let buttonEnabledProperty = MutableProperty<Bool>(false)
     private let authObserver: Signal<Void, Never>.Observer
-    private let loginService: LoginServiceProtocol
-
-    let loginProperty = MutableProperty<String>("")
-    let passwordProperty = MutableProperty<String>("")
 
     let authSignal: Signal<Void, Never>
-    var isButtonEnabled: Property<Bool>
+    let isButtonEnabled: Property<Bool>
     let isLoading: Property<Bool>
+    let login: Property<String>
+    let password: Property<String>
+
+    private let loginService: LoginServiceProtocol
 
     init(loginService: LoginServiceProtocol) {
 
         self.loginService = loginService
 
         (authSignal, authObserver) = Signal.pipe()
-        
+
         isLoading = Property(loadingProperty)
         isButtonEnabled = Property(buttonEnabledProperty)
+        login = Property(loginProperty)
+        password = Property(passwordProperty)
 
         buttonEnabledProperty <~ Property.combineLatest(
-            loginProperty, passwordProperty, isLoading
+            login, password, isLoading
         )
         .map { login, password, isLoading in
             !login.isEmpty && !password.isEmpty && !isLoading
@@ -37,13 +41,13 @@ class LoginViewModel {
         loginProperty <~ loginChanged.map(normalized)
         passwordProperty <~ passwordChanged.map(normalized)
 
-        let startRequest = authTrigger.withLatest(from: isButtonEnabled).filter { $1 }.toVoid()
+        let startRequest = authTrigger.withLatest(from: isButtonEnabled).filter(\.1).toVoid()
 
         loadingProperty <~ startRequest.map(value: true).merge(with: authSignal.map(value: false))
 
         authObserver <~ startRequest
-            .withLatest(from: loginProperty.combineLatest(with: passwordProperty))
-            .map { $1 }
+            .withLatest(from: login.combineLatest(with: password))
+            .map(\.1)
             .flatMap(.latest, loginService.authenticate)
     }
 

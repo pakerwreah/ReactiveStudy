@@ -26,8 +26,8 @@ class ReactiveStudyTests: XCTestCase {
         loginObserver.send(value: " a ")
         passwordObserver.send(value: " b ")
 
-        XCTAssertEqual(viewModel.loginProperty.value, "a")
-        XCTAssertEqual(viewModel.passwordProperty.value, "b")
+        XCTAssertEqual(viewModel.login.value, "a")
+        XCTAssertEqual(viewModel.password.value, "b")
     }
 
     func test_loginEmpty_passwordEmpty_shouldNotEnableButton() {
