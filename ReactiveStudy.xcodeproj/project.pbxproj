@@ -145,10 +145,10 @@
 		340C02D425802C1B00A76B30 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				344F185C25816EC1007F915C /* Reactive+UI.swift */,
+				344F18582581372C007F915C /* Reactive+Utils.swift */,
 				340C02D525802C4000A76B30 /* UIView+fromNib.swift */,
 				340C02DB25802F1000A76B30 /* UIView+Layout.swift */,
-				344F18582581372C007F915C /* Reactive+Utils.swift */,
-				344F185C25816EC1007F915C /* Reactive+UI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
